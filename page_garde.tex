@@ -1,0 +1,61 @@
+%!TEX root = ./Consignes_Rapport_Technique.tex
+
+% page de garde
+\begin{titlepage}
+
+        \hspace*{-2.7cm}\rotatebox[origin=rB]{90}{%
+        \tcbox[tcbox raise base,colback=rougemeca!75!white,boxrule=0pt,arc=0pt]%
+        {
+        \parbox[c][3cm]{24.2cm}{%
+        \begin{center}%
+        \sffamily\bfseries\Huge%
+        \ \\[20pt] \typeprojet ~--- \scolarite \\ \ \\
+        \end{center}%
+        }%
+        }}
+        \vspace*{-25.7cm}
+
+       \hspace*{1.5cm}\raggedleft
+       \begin{minipage}{0.95\textwidth}
+        \begin{center}
+        % Upper part of the page. The '~' is needed because only works if a paragraph has started.
+	\includegraphics[height=2.6cm]{./figures/logo_um.png}\hfill
+        \includegraphics[height=3cm]{./figures/logo_dpt.png}\hfill
+        \raisebox{-0.0cm}{\includegraphics[height=2.7 cm]{./figures/logo_FDS.png}}~\\[1cm]
+        \textbf{\LARGE Département de Mécanique\\[0.25cm]
+        Faculté des Sciences  --- Université de Montpellier}\\[1.5cm]
+        \textsc{\Large }\\[0.5cm]
+        % Title
+        \rule{\linewidth}{0.5mm} \\[0.4cm]
+        {\huge \bfseries \makeatletter\@title\makeatother \\[0.4cm] }
+        \rule{\linewidth}{0.5mm} \\ \begin{minipage}{\textwidth}\raggedleft {\Large \color{Gray} année \annee}\end{minipage} \ \\[2.5cm]
+        % Author and supervisor
+        \begin{minipage}{0.48\textwidth}
+        \begin{flushleft} \large
+        {\color{Gray} Auteurs}\\
+        \makeatletter\@author\makeatother
+        \end{flushleft}
+        \end{minipage}
+        \begin{minipage}{0.48\textwidth}
+        \begin{flushright} \large
+        {\color{Gray} Client} \\
+        \client\\
+        {\color{Gray} Encadrant} \\
+        \encadrant
+        \end{flushright}
+        \end{minipage}
+        
+        \vspace*{8.9cm}
+        % Bottom of the page
+        {\large \today}
+        \end{center}
+        \end{minipage}
+        
+\end{titlepage}
+
+%page blanche
+\newpage
+~
+%ne pas numéroter cette page
+\thispagestyle{empty}
+\newpage

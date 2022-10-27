@@ -1,0 +1,165 @@
+\documentclass[a4paper,11pt]{paper}
+
+%====================== PACKAGES ======================
+
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,graphicx,url,hyperref,array,tabularx}
+%police et mise en page (marges) du document
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[listings]{tcolorbox}% http://ctan.org/pkg/tcolorbox
+\definecolor{rougemeca}{RGB}{203,10,32}
+
+\usepackage{tikz}
+
+
+%====================== INFORMATION ET REGLES ======================
+
+\author{
+        Premier AUTEUR\\
+        Deuxième AUTEUR\\
+        Troisième AUTEUR
+}
+\title{
+	Rapport de projet technique\\
+        Quelques consignes
+}
+\newcommand{\annee}{2021-2022}
+\newcommand{\typeprojet}{\color{white}{HAY507Y - CalNumMec}}
+\newcommand{\scolarite}{CUPGE L3}
+\newcommand{\encadrant}{Premier ENCADRANT}
+\newcommand{\client}{Société}
+%
+\addto\captionsfrench{%
+  \renewcommand{\listfigurename}{Liste des Figures}%
+  \renewcommand{\listtablename}{Liste des Tableaux}%
+}
+
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+
+%======================== DEBUT DU DOCUMENT ========================
+
+\begin{document}
+\sffamily
+
+\input{page_garde} % insérer la page de garde
+
+%\renewcommand{\abstractnamefont}{\normalfont\Large\bfseries}
+%\renewcommand{\abstracttextfont}{\normalfont\Huge}
+
+\thispagestyle{empty}
+        \begin{abstract}
+        \hskip7mm        
+        Le résumé doit être concis (10-15 lignes), clair et doit permettre simultanément: (1) au non spécialiste de comprendre la thématique et les enjeux et (2) au spécialiste de savoir s'il trouvera l'information qu'il recherche. En général, il ne doit pas contenir acronyme, de sigles ou de notations qui nécessiteraient un pré-requis. Il est souvent judicieux d'en proposer un version en anglais.          
+        \end{abstract}
+
+\newpage
+
+% table des matières
+\tableofcontents
+\thispagestyle{empty}
+%ne pas numéroter le sommaire
+\newpage
+\thispagestyle{empty}
+% table des matières
+\listoffigures
+\listoftables
+\clearpage
+\newpage
+
+%espacement entre les lignes d'un tableau
+%\renewcommand{\arraystretch}{1.5}
+
+%====================== CORPS DU TEXTE ======================
+
+%recommencer la numérotation des pages à "1"
+\setcounter{page}{1}
+
+\section{Rédaction du texte}
+
+Le texte doit être rédigé dans un français convenable (correcteur orthographique a minima), en respectant les règles typographiques d'usage, sur la ponctuation notamment\footnote{voir par exemple \href{http://revues.refer.org/telechargement/fiche-typographie.pdf}{\texttt http://revues.refer.org/telechargement/fiche-typographie.pdf}}. \\
+
+Le texte est rédigé à la \emph{voie passive}, en limitant les personnifications. On écrira: "le travail réalisé concerne la mécanique", plutôt que "notre travail concerne la mécanique". On écrira: "l'hypothèse des petites perturbations a été formulée", plutôt que "nous avons fait l'hypothèse des petites perturbations". Ce n'est pas "notre problème", ni "notre travail", ni "notre méthode"; il s'agit du "problème considéré", du "travail réalisé", de la "méthode proposée".  \\
+
+Autant que faire ce peut, un rapport scientifique doit être autosuffisant: toutes les données utilisées doivent être listées, ainsi que les hypothèses formulées, les équations considérées doivent être rappelées en précisant toutes les notations ou les sigles (au fil du texte ou dans une nommenclature), les annexes peuvent permettre d'indiquer un rappel de contexte que le lecteur est sensé connaître, les références sont complètes et détaillées. Un rapport a vocation à être lu/utilisé par des personnes n’ayant pas travaillé sur le sujet.
+
+Les passages très techniques qui peuvent nuire à la lecture sont préférentiellement mis en annexe. 
+
+Les scripts informatiques, les morceaux de programmes, etc, n'ont pas vocation à apparaître explicitement ; il est préférable d'expliquer les algorithmes et les méthodes utilisés.\\
+
+Le texte doit contenir une introduction et une conclusion. L’introduction doit donner le cadre de l’étude en positionnant le problème d’un point de vue scientifique, industriel, sociétal, économique. La conclusion doit constituer plus qu’une simple redite de ce qui est déjà écrit dans le corps du texte; elle doit élargir la discussion, insister sur les limites du travail réalisé, la (non) pertinence des hypothèses, les manières de l’étendre, etc. Le lecteur pressé doit pouvoir se contenter du résumé, de l'introduction et de la conclusion. 
+
+\section{Les tables et figures}
+
+Les tables et les figures sont insérées dans le texte \emph{uniquement} si elles sont informatives; il ne s'agit pas de décorer le texte, ni de le meubler. Les figures ne sont pas de simples copies d’écran: il faut réaliser des figures spécifiques, avec des noms et des unités sur les axes, des tailles de labels adaptées. 
+\\
+
+Le tableau \ref{table:1} est un exemple d'un tableau référence par les commandes  \LaTeX.
+ 
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c||} 
+ \hline
+ Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ 2 & 7 & 78 & 5415 \\
+ 3 & 545 & 778 & 7507 \\
+ 4 & 545 & 18744 & 7560 \\
+ 5 & 88 & 788 & 6344 \\ [1ex] 
+ \hline
+\end{tabular}
+\caption{Table to test captions and labels}
+\label{table:1}
+\end{table}
+
+
+des informations complémentaires sont disponibles sur : https://fr.sharelatex.com/learn/Tables
+
+Les figures sont numérotées, légendées et obligatoirement citées une fois dans le texte par un renvoi à leur numérotation (on évitera "la figure ci-dessous" qui n'est pas robuste au changement de pagination, on préfèrera "la \figurename~\ref{fig:logo}"). La légende peut être comprise sans devoir lire le corps du texte de manière approfondie.
+
+\begin{figure}[h]
+\centering
+\includegraphics[height=2.5cm]{./figures/logo_FDS.png}
+\caption{Logo de la Faculté des sciecnes en janvier 2018.}
+\label{fig:logo}
+\end{figure}
+ 
+\section{Les équations}
+
+Les équations doivent être numérotées, a minima lorsqu'elles ont besoin d'être référencées. De nouveau, on évitera "l'équation qui suit" et on préfèrera "l'équation~\eqref{eq1}" pour rester robuste à la modification de pagination.
+\begin{eqnarray}
+div(\sigma)=0
+\label{eq1}
+\end{eqnarray}
+On précisera l'intégralité des notations, par exemple: dans l'équation~\eqref{eq1} le symbole $div$ désigne la divergence spatiale et $\sigma$ est le tenseur des contraintes de Cauchy.
+
+\section{Les références}
+
+Un travail scientifique et technique s'appuie sur des références solides issues d'une littérature validée par la communauté (par exemple, un ouvrages de référence \cite{maxwell_1873}, un mémoire de thèse, un chapitre des sciences et techniques de l'ingénieur ou d'une collection \cite{Moreau1988}, un rapport technique \cite{Karb_et_al_KFK_1983}, un article scientifique tiré de revue avec comité de lecture \cite{grange_et_al_IJF_2000}, etc.). Les références à des pages internet doivent être une exception (même wikipedia).  
+
+La liste bibliographique doit être suffisamment précise: un lecteur doit pouvoir trouver ou commander chaque référence en quelques minutes. Une référence "cours de mécanique des solides Polytech Montpellier” n'est pas suffisante.
+
+L'utilisation de tout ou partie d'un ouvrage antérieur à la rédaction du présent rapport doit faire l'object d'une citation. Le manquement à cette règle constitue un plagiat dont les conséquences peuvent être lourdes (en janvier 2018, jusqu’à deux ans d’emprisonnement et 150 000 euros d’amende). L'Université est doté d'un système de détection des plagiats.
+
+Les "archives ouvertes" sur internet (cours, rapports, thèses, HAL, etc.) sont protégées par le code de la propriété intellectuelle. 
+
+
+%%%%%%%%%%%%%%%%%%%% LA BIBLIOGRAPHIE
+\newpage
+\section{Bibliographie}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliographie.bib}
+%%%%%% Annexe spécifique au PIM
+\newpage
+\input{annexes}
+
+\end{document}
